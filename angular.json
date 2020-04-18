@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-build-pod"
+    }
+  },
+  "defaultProject": "ng-build-pod",
+  "cli": {
+    "analytics": "cef7a772-4d35-491e-bc17-dbc675703bbf"
+  }
 }
