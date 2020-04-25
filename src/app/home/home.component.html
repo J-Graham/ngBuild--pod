@@ -1,4 +1,23 @@
-<p>home works!</p>
-<ul>
-    <li *ngFor="let page of links$ | async">{{ page.route }}</li>
-</ul>
+<header class="text-white">
+    <div class="container display-4 text-center" style="color: black;">
+        <strong>Podcast 7 - "Authentication"</strong>
+    </div>
+</header>
+<section class="bg-dark" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center">Past Episodes</h2>
+                <br>
+                <div *ngIf="(recentEpisodes$ | async) as recentEpisodes">
+                    <div *ngFor="let episode of recentEpisodes" class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ episode.title }}</h5>
+                            <p class="card-text" [innerHTML]="episode.description"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

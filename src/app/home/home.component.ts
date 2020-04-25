@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ScullyRoutesService } from '@scullyio/ng-lib';
+import { RssService } from './rss.service';
+
 
 @Component({
   selector: 'app-home',
@@ -9,15 +11,13 @@ import { ScullyRoutesService } from '@scullyio/ng-lib';
 })
 export class HomeComponent implements OnInit {
 
-  links$: Observable<any> = this.scully.available$;
+  recentEpisodes$: Observable<any>;
 
-  constructor (private scully: ScullyRoutesService) { }
+  constructor (private rss: RssService) { }
 
   ngOnInit() {
-    // debug current pages
-    this.links$.subscribe(links => {
-      console.log(links);
-    });
+
+    this.recentEpisodes$ = this.rss.getFeed();
   }
 
 }
