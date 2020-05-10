@@ -1,8 +1,14 @@
 img {
     border-radius: 50%;
-    width: 50%;
-    margin: auto;
-    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    overflow: hidden;
+    -webkit-border-radius: 105px;
+    -moz-border-radius: 105px;
+    border-radius: 105px;
+    width: 200px;
+    height: 200px;
 }
 
 header {
