@@ -12,7 +12,12 @@
                 <div *ngIf="(recentEpisodes$ | async) as recentEpisodes">
                     <div *ngFor="let episode of recentEpisodes" class="card">
                         <div class="card-body">
-                            <h5 class="card-title">{{ episode.title }}</h5>
+                            <div class="row">
+                                <h5 class="card-title">Episode {{episode['itunes:episode']}}: {{ episode.title }}</h5>
+                                <p class="sub-title">{{ episode.pubDate | date}} |
+                                    {{ getDuration(episode['itunes:duration']) | date:'H:mm:ss' }}</p>
+                            </div>
+
                             <p class="card-text" [innerHTML]="episode.description"></p>
                         </div>
                     </div>
